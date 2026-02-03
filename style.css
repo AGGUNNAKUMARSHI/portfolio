@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: black;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+.logo {
+    color: #FFD700;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.small-title {
+    letter-spacing: 4px;
+    font-size: 14px;
+    color: #FFD700;
+}
+
+.hero h1 {
+    font-size: 80px;
+    margin: 20px 0;
+}
+
+.hero-btn {
+    border: 2px solid #FFD700;
+    padding: 12px 25px;
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-btn:hover {
+    background: #FFD700;
+    color: black;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 40px;
+}
+
+section h2 {
+    color: #FFD700;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+section p {
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+/* SKILLS */
+ul li {
+    list-style: square;
+    margin: 10px 0;
+}
+
+/* PROJECTS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #111;
+    padding: 15px;
+    border: 1px solid #222;
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.project-card h3 {
+    margin: 15px 0 10px;
+    color: white;
+}
+
+.project-card p {
+    color: #ccc;
+}
+
+/* CONTACT */
+.resume-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #FFD700;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+    nav {
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+section {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.project-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+}
+.project-card img {
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.project-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+.hero-btn,
+.resume-btn {
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover,
+.resume-btn:hover {
+    transform: scale(1.05);
+}
